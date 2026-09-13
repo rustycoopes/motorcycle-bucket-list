@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Motorcycle Bucket List</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+  nav {
+    width: 260px;
+    flex-shrink: 0;
+    border-right: 1px solid #8884;
+    padding: 1rem;
+    overflow-y: auto;
+  }
+  nav h1 {
+    font-size: 1.1rem;
+    margin: 0 0 1rem;
+  }
+  nav a {
+    display: block;
+    padding: 0.5rem 0.6rem;
+    border-radius: 6px;
+    text-decoration: none;
+    color: inherit;
+    margin-bottom: 0.25rem;
+  }
+  nav a:hover { background: #8882; }
+  nav a.active { background: #8884; font-weight: 600; }
+  main { flex: 1; min-width: 0; }
+  iframe { width: 100%; height: 100%; border: 0; }
+  .placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #888;
+  }
+</style>
+</head>
+<body>
+<nav>
+  <h1>Bucket List</h1>
+  <div id="links"></div>
+</nav>
+<main id="main">
+  <div class="placeholder">Pick a trip from the list</div>
+</main>
+<script>
+  const trips = [
+    { name: "Coast to Coast (USA)", folder: "coast-to-coast" },
+    { name: "US Racetracks", folder: "us-racetracks" },
+  ];
+
+  const links = document.getElementById("links");
+  const main = document.getElementById("main");
+
+  trips.forEach(trip => {
+    const a = document.createElement("a");
+    a.href = `${trip.folder}/itinerary.html`;
+    a.textContent = trip.name;
+    a.addEventListener("click", e => {
+      e.preventDefault();
+      document.querySelectorAll("nav a").forEach(l => l.classList.remove("active"));
+      a.classList.add("active");
+      main.innerHTML = `<iframe src="${trip.folder}/itinerary.html" title="${trip.name}"></iframe>`;
+      history.replaceState(null, "", `#${trip.folder}`);
+    });
+    links.appendChild(a);
+  });
+
+  const initial = trips.find(t => t.folder === location.hash.slice(1)) || trips[0];
+  if (initial) {
+    document.querySelector(`nav a[href="${initial.folder}/itinerary.html"]`).click();
+  }
+</script>
+</body>
+</html>

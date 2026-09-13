@@ -7,6 +7,7 @@ One folder per trip.
 | Trip | Folder | Status |
 |---|---|---|
 | Coast to Coast (USA) | [`coast-to-coast/`](coast-to-coast/) | Planning — rough itinerary, not booked |
+| US Racetracks | [`us-racetracks/`](us-racetracks/) | Not started |
 
 ## Layout convention
 
