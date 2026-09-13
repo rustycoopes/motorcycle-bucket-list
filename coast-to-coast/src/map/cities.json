@@ -1,0 +1,234 @@
+{
+  "Ridgefield, CT": [
+    869.13,
+    202.68
+  ],
+  "Front Royal, VA (Shenandoah)": [
+    802.5,
+    271.44
+  ],
+  "Roanoke, VA": [
+    779.25,
+    313.44
+  ],
+  "Asheville, NC": [
+    739.18,
+    357.96
+  ],
+  "Great Smoky Mountains, TN": [
+    721.58,
+    360
+  ],
+  "Nashville, TN": [
+    662.33,
+    354.28
+  ],
+  "Memphis, TN": [
+    605.56,
+    381.73
+  ],
+  "Hot Springs, AR": [
+    551.63,
+    398.82
+  ],
+  "Oklahoma City, OK": [
+    470.51,
+    377.72
+  ],
+  "Amarillo, TX": [
+    392.43,
+    380.24
+  ],
+  "Santa Fe, NM": [
+    319.48,
+    363.66
+  ],
+  "Taos, NM": [
+    327.64,
+    348.17
+  ],
+  "Chaco Canyon, NM": [
+    284.49,
+    351.13
+  ],
+  "Durango, CO": [
+    289.25,
+    324.12
+  ],
+  "Silverton, CO": [
+    294.5,
+    312.57
+  ],
+  "Ouray, CO": [
+    294.97,
+    307.84
+  ],
+  "Telluride, CO": [
+    292.29,
+    309.44
+  ],
+  "Mesa Verde, CO": [
+    278.97,
+    323.8
+  ],
+  "Moab, UT": [
+    264.28,
+    291.21
+  ],
+  "Capitol Reef, UT": [
+    236.18,
+    293.24
+  ],
+  "Bryce Canyon, UT": [
+    215.48,
+    305.9
+  ],
+  "Page, AZ": [
+    225.64,
+    323.12
+  ],
+  "Grand Canyon, AZ": [
+    210.42,
+    340.24
+  ],
+  "Sedona, AZ": [
+    212.7,
+    367.71
+  ],
+  "Phoenix, AZ": [
+    201.71,
+    398.31
+  ],
+  "Joshua Tree, CA": [
+    126.7,
+    374.03
+  ],
+  "Los Angeles, CA": [
+    92.98,
+    362.22
+  ],
+  "Big Sur, CA": [
+    42.99,
+    297.7
+  ],
+  "San Francisco, CA": [
+    41.81,
+    262.11
+  ],
+  "Redwoods, CA": [
+    37.73,
+    180.09
+  ],
+  "Crater Lake, OR": [
+    78.62,
+    151.48
+  ],
+  "Bend, OR": [
+    97.64,
+    130.82
+  ],
+  "Portland, OR": [
+    85.68,
+    93.59
+  ],
+  "Mount Rainier, WA": [
+    107.98,
+    68.92
+  ],
+  "Glacier NP, MT": [
+    234.18,
+    56.39
+  ],
+  "Missoula, MT": [
+    223.54,
+    95.53
+  ],
+  "Bozeman, MT": [
+    263.92,
+    129.66
+  ],
+  "Yellowstone, WY": [
+    266.66,
+    158.37
+  ],
+  "Jackson, WY": [
+    260.63,
+    178.95
+  ],
+  "Rapid City, SD": [
+    382.33,
+    179.54
+  ],
+  "Black Hills, SD": [
+    378.39,
+    183.76
+  ],
+  "Badlands, SD": [
+    396.21,
+    185.59
+  ],
+  "Sioux Falls, SD": [
+    486.08,
+    195.91
+  ],
+  "Madison, WI": [
+    604.88,
+    202.82
+  ],
+  "Niagara Falls, NY": [
+    771.62,
+    181.53
+  ],
+  "Green Mountains, VT": [
+    866.32,
+    143.92
+  ],
+  "Lake Placid, NY": [
+    845.86,
+    138.98
+  ],
+  "Harbor Springs, MI": [
+    670.07,
+    143.71
+  ],
+  "Keweenaw, MI": [
+    618.44,
+    104.57
+  ],
+  "Duluth, MN": [
+    557.73,
+    122.24
+  ],
+  "Fargo, ND": [
+    485.75,
+    121.41
+  ],
+  "Theodore Roosevelt NP, ND": [
+    383.86,
+    114.72
+  ],
+  "Casper, WY": [
+    330.3,
+    202.08
+  ],
+  "Spokane, WA": [
+    175.94,
+    67.66
+  ],
+  "North Cascades, WA": [
+    133.08,
+    37.86
+  ],
+  "Oregon Coast, OR": [
+    59.32,
+    106.28
+  ],
+  "White Mountains, NH": [
+    883.02,
+    129.92
+  ],
+  "Acadia NP, ME": [
+    933.36,
+    114.17
+  ]
+}
