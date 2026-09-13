@@ -15,7 +15,7 @@ Northeast · Southeast · Midwest · Texas/South-Central · Mountain/Southwest �
 | Summit Point (Main/Shenandoah) | WV | N2 Track Days |
 | Palmer Motorsports Park | MA | NEQ, regional NE clubs |
 | New Hampshire Motor Speedway (Loudon) | NH | Tony's Track Days |
-| Pittsburgh International Race Complex | PA | Penguin Roadracing School, Sportbike Track Time |
+| ~~Pittsburgh International Race Complex~~ | PA | **Closed permanently Nov 30, 2025 — sold to developers. Excluded from clusters.** |
 | Road Atlanta (Michelin Raceway) | GA | N2 Track Days, Just Track It, JZilla, Yamaha ChampStreet |
 | Barber Motorsports Park | AL | Just Track It, JZilla |
 | Atlanta Motorsports Park | GA | Just Track It, JZilla |
@@ -43,6 +43,7 @@ Northeast · Southeast · Midwest · Texas/South-Central · Mountain/Southwest �
 | Pacific Raceways | WA | 2Fast |
 | Portland International Raceway | OR | 2Fast |
 | Oregon Raceway Park | OR | 2Fast |
+| NC Bike (NCCAR) | NC | N2 Track Days, EvolveGT |
 
 ## Provider reference list
 
@@ -63,6 +64,7 @@ Northeast · Southeast · Midwest · Texas/South-Central · Mountain/Southwest �
 | JZilla Track Days | Southeast (Road Atlanta, Barber, VIR, Charlotte) | jzillatrackdays.com |
 | Fast Line Track Days | NCM Motorsports Park (KY) | fastlinetrackdays.com |
 | Yamaha Champions Riding School (ChampStreet) | Road Atlanta + touring | ridelikeachampion.com |
+| EvolveGT | NC Bike (NCCAR), Blackhawk Farms, others | evolvegt.com |
 
 ## Proposed clusters
 
@@ -73,8 +75,8 @@ Off-days: Finger Lakes wine country (near Watkins Glen), Green Mountains/White M
 **Fits a 1-2 week working trip.**
 
 ### 2. Southeast Swing
-Tracks: Road Atlanta, Barber, Atlanta Motorsports Park, Roebling Road, VIR.
-Rough length: 10-14 days.
+Tracks: Road Atlanta, Barber, Atlanta Motorsports Park, Roebling Road, VIR, NCM Motorsports Park (KY), NC Bike (NCCAR).
+Rough length: 12-17 days.
 Off-days: Blue Ridge Parkway/Tail of the Dragon riding, Asheville NC food/brewery scene, Savannah historic district (near Roebling Road).
 **1-2 week working trip, maybe stretch to 2.5.**
 
@@ -113,6 +115,15 @@ A full cross-country sweep chaining several clusters above (e.g. Southeast → T
 
 - **Realistic 1-2 week (working) trips**: Northeast Loop, Southeast Swing, Texas Triangle, Midwest Circuit, Pacific NW Loop — each is geographically tight (one time zone, mostly single-day tows between tracks).
 - **Retirement-scale trips**: SoCal Cluster (California distances alone stretch it), and any multi-region chain (e.g. Southeast+Texas, or a full coast-to-coast track sweep) — these cross multiple regions/time zones and only make sense with an open-ended calendar.
+
+## Corrections after the initial pass
+
+The first research pass missed things — worth tracking so the list doesn't get treated as more complete than it is:
+
+- **NCM Motorsports Park (KY)** and **Pittsburgh International Race Complex (PA)** were both in this findings doc from the start but got dropped when the cluster data was hand-built. NCM has been added to Southeast Swing. Pitt Race's omission turned out to be moot — it **closed permanently Nov 30, 2025** (sold to developers).
+- **NC Bike (NCCAR)**, Garysburg NC — a dedicated 2-mile motorcycle road course with N2 Track Days and EvolveGT events — wasn't surfaced by the original research at all, not just dropped later. Found only because Russ asked about it directly. Added to Southeast Swing (it's ~1.5-2 hrs from VIR).
+- **Indianapolis Motor Speedway** was checked and correctly excluded: its 2.591-mi Modified Motorcycle Course hosted MotoGP 2008-2015 and occasional MotoAmerica since 2020, but no commercial trackday provider currently runs open motorcycle sessions there — it's professional-racing-only right now.
+- **Takeaway**: the original web-search pass favored well-known circuits and likely missed other small/regional dedicated motorcycle tracks the same way it missed NC Bike. Treat this list as strong but not exhaustive — worth another targeted pass if Russ wants higher confidence before finalizing clusters.
 
 ## Sources
 

@@ -26,7 +26,10 @@
           "lon": -75.1112,
           "providers": [
             "The Riders Club"
-          ]
+          ],
+          "url": "https://njmp.com/",
+          "length": "1.9-2.25 mi (Lightning/Thunderbolt)",
+          "mapUrl": "https://www.racingcircuits.info/north-america/usa/new-jersey-motorsports-park.html"
         },
         {
           "name": "Watkins Glen International",
@@ -35,7 +38,10 @@
           "lon": -76.9271,
           "providers": [
             "Regional HPDE/moto orgs"
-          ]
+          ],
+          "url": "https://www.theglen.com/",
+          "length": "2.45 mi",
+          "mapUrl": "https://en.wikipedia.org/wiki/Watkins_Glen_International"
         },
         {
           "name": "Summit Point",
@@ -44,7 +50,10 @@
           "lon": -77.9814,
           "providers": [
             "N2 Track Days"
-          ]
+          ],
+          "url": "https://summitpointmp.com/",
+          "length": "2.0-2.2 mi (Main/Shenandoah)",
+          "mapUrl": "https://www.racingcircuits.info/north-america/usa/summit-point.html"
         },
         {
           "name": "Palmer Motorsports Park",
@@ -54,7 +63,10 @@
           "providers": [
             "NEQ",
             "regional NE clubs"
-          ]
+          ],
+          "url": "https://www.palmermotorsportspark.com/",
+          "length": "2.3 mi",
+          "mapUrl": "https://www.racingcircuits.info/north-america/usa/palmer-motorsports-park.html"
         },
         {
           "name": "New Hampshire Motor Speedway (Loudon)",
@@ -63,7 +75,10 @@
           "lon": -71.4645,
           "providers": [
             "Tony's Track Days"
-          ]
+          ],
+          "url": "https://www.nhms.com/",
+          "length": "~1.6 mi (road course)",
+          "mapUrl": "https://en.wikipedia.org/wiki/New_Hampshire_Motor_Speedway"
         }
       ]
     },
@@ -71,12 +86,14 @@
       "id": "southeast",
       "name": "Southeast Swing",
       "size": "small",
-      "length": "10-14 days",
+      "length": "12-17 days",
       "color": "#a13d2e",
       "states": [
         "Georgia",
         "Alabama",
-        "Virginia"
+        "Virginia",
+        "Kentucky",
+        "North Carolina"
       ],
       "offDays": [
         "Blue Ridge Parkway / Tail of the Dragon riding",
@@ -94,7 +111,10 @@
             "Just Track It",
             "JZilla",
             "Yamaha ChampStreet"
-          ]
+          ],
+          "url": "https://www.roadatlanta.com/",
+          "length": "1.76-2.54 mi",
+          "mapUrl": "https://www.racingcircuits.info/north-america/usa/road-atlanta.html"
         },
         {
           "name": "Barber Motorsports Park",
@@ -104,7 +124,10 @@
           "providers": [
             "Just Track It",
             "JZilla"
-          ]
+          ],
+          "url": "https://barberracingevents.com/",
+          "length": "2.3-2.38 mi",
+          "mapUrl": "https://www.racingcircuits.info/north-america/usa/barber-motorsports-park.html"
         },
         {
           "name": "Atlanta Motorsports Park",
@@ -114,7 +137,10 @@
           "providers": [
             "Just Track It",
             "JZilla"
-          ]
+          ],
+          "url": "https://www.atlantamotorsportspark.com/",
+          "length": "2.0 mi",
+          "mapUrl": "https://en.wikipedia.org/wiki/Atlanta_Motorsports_Park"
         },
         {
           "name": "Roebling Road Raceway",
@@ -123,7 +149,10 @@
           "lon": -81.3387,
           "providers": [
             "Just Track It"
-          ]
+          ],
+          "url": "http://www.roeblingroad.com/",
+          "length": "2.02 mi",
+          "mapUrl": "https://www.racingcircuits.info/north-america/usa/roebling-road.html"
         },
         {
           "name": "Virginia International Raceway",
@@ -133,7 +162,36 @@
           "providers": [
             "JZilla",
             "regional NE/SE orgs"
-          ]
+          ],
+          "url": "https://virnow.com/",
+          "length": "1.1-4.2 mi (Patriot to Grand Course)",
+          "mapUrl": "https://www.racingcircuits.info/north-america/usa/virginia-international-raceway.html"
+        },
+        {
+          "name": "NCM Motorsports Park",
+          "state": "KY",
+          "lat": 36.945,
+          "lon": -86.398,
+          "providers": [
+            "Fast Line Track Days",
+            "Sportbike Track Time"
+          ],
+          "url": "https://www.motorsportspark.org/",
+          "length": "1.0-3.15 mi (East/West/Full)",
+          "mapUrl": "https://www.racingcircuits.info/north-america/usa/ncm-motorsports-park.html"
+        },
+        {
+          "name": "NC Bike (NCCAR)",
+          "state": "NC",
+          "lat": 36.4523,
+          "lon": -77.5942,
+          "providers": [
+            "N2 Track Days",
+            "EvolveGT"
+          ],
+          "url": "https://nccar.us/ncbike/",
+          "length": "2.0 mi (bi-directional CW/CCW)",
+          "mapUrl": "https://lapmeta.com/en/track/variation/214/track_map"
         }
       ]
     },
@@ -161,7 +219,10 @@
           "providers": [
             "RideSmart",
             "Motorcycle Missions"
-          ]
+          ],
+          "url": "https://circuitoftheamericas.com/",
+          "length": "3.426 mi",
+          "mapUrl": "https://en.wikipedia.org/wiki/Circuit_of_the_Americas"
         },
         {
           "name": "MotorSport Ranch (Cresson)",
@@ -171,7 +232,10 @@
           "providers": [
             "RideSmart",
             "Motorcycle Missions"
-          ]
+          ],
+          "url": "https://motorsportranch.com/",
+          "length": "1.3-3.1 mi",
+          "mapUrl": "https://en.wikipedia.org/wiki/MotorSport_Ranch"
         },
         {
           "name": "Eagles Canyon Raceway",
@@ -181,7 +245,10 @@
           "providers": [
             "RideSmart",
             "Motorcycle Missions"
-          ]
+          ],
+          "url": "https://eaglescanyon.com/",
+          "length": "1.2-2.75 mi",
+          "mapUrl": "https://en.wikipedia.org/wiki/Eagles_Canyon_Raceway"
         },
         {
           "name": "MSR Houston",
@@ -191,7 +258,10 @@
           "providers": [
             "RideSmart",
             "Motorcycle Missions"
-          ]
+          ],
+          "url": "https://msrhouston.com/",
+          "length": "2.38 mi",
+          "mapUrl": "https://en.wikipedia.org/wiki/MSR_Houston"
         },
         {
           "name": "Hallett Motor Racing Circuit",
@@ -200,7 +270,10 @@
           "lon": -96.1256,
           "providers": [
             "Regional TX/OK orgs"
-          ]
+          ],
+          "url": "https://www.motorsportreg.com/orgs/hallett",
+          "length": "1.8 mi",
+          "mapUrl": "https://www.racingcircuits.info/north-america/usa/hallett.html"
         }
       ]
     },
@@ -230,7 +303,10 @@
           "providers": [
             "Penguin Roadracing School",
             "Sportbike Track Time"
-          ]
+          ],
+          "url": "https://www.midohio.com/",
+          "length": "2.258-2.4 mi",
+          "mapUrl": "https://en.wikipedia.org/wiki/Mid-Ohio_Sports_Car_Course"
         },
         {
           "name": "GingerMan Raceway",
@@ -239,7 +315,10 @@
           "lon": -86.1755,
           "providers": [
             "Sportbike Track Time"
-          ]
+          ],
+          "url": "https://www.gingermanraceway.com/",
+          "length": "1.88-2.14 mi",
+          "mapUrl": "https://www.racingcircuits.info/north-america/usa/gingerman-raceway.html"
         },
         {
           "name": "Grattan Raceway",
@@ -248,7 +327,10 @@
           "lon": -85.2439,
           "providers": [
             "Sportbike Track Time"
-          ]
+          ],
+          "url": "https://www.grattanraceway.com/",
+          "length": "2.0 mi",
+          "mapUrl": "https://www.racingcircuits.info/north-america/usa/grattan-raceway.html"
         },
         {
           "name": "Blackhawk Farms Raceway",
@@ -258,7 +340,10 @@
           "providers": [
             "Sportbike Track Time",
             "Motovid"
-          ]
+          ],
+          "url": "https://www.facebook.com/blackhawkfarms/",
+          "length": "1.95 mi",
+          "mapUrl": "https://www.racingcircuits.info/north-america/usa/blackhawk-farms.html"
         },
         {
           "name": "Road America",
@@ -267,7 +352,10 @@
           "lon": -87.9989,
           "providers": [
             "Sportbike Track Time"
-          ]
+          ],
+          "url": "https://www.roadamerica.com/",
+          "length": "4.048 mi",
+          "mapUrl": "https://en.wikipedia.org/wiki/Road_America"
         }
       ]
     },
@@ -294,7 +382,10 @@
           "lon": -121.7539,
           "providers": [
             "Fun Track Dayz"
-          ]
+          ],
+          "url": "https://weathertechraceway.com/",
+          "length": "2.238 mi",
+          "mapUrl": "https://en.wikipedia.org/wiki/Laguna_Seca"
         },
         {
           "name": "Sonoma Raceway",
@@ -303,7 +394,10 @@
           "lon": -122.4544,
           "providers": [
             "Fun Track Dayz"
-          ]
+          ],
+          "url": "https://www.sonomaraceway.com/",
+          "length": "1.99 mi",
+          "mapUrl": "https://en.wikipedia.org/wiki/Sonoma_Raceway"
         },
         {
           "name": "Thunderhill Raceway",
@@ -313,7 +407,10 @@
           "providers": [
             "Fun Track Dayz",
             "Two Wheel Track Days"
-          ]
+          ],
+          "url": "https://www.thunderhill.com/",
+          "length": "2.0-4.6 mi (West/East/combined)",
+          "mapUrl": "https://www.racingcircuits.info/north-america/usa/thunderhill-raceway-park.html"
         },
         {
           "name": "Buttonwillow Raceway Park",
@@ -322,7 +419,10 @@
           "lon": -119.4568,
           "providers": [
             "Fun Track Dayz"
-          ]
+          ],
+          "url": "https://buttonwillowraceway.com/",
+          "length": "1.06-3.1 mi (many configs)",
+          "mapUrl": "https://en.wikipedia.org/wiki/Buttonwillow_Raceway_Park"
         },
         {
           "name": "Willow Springs / Streets of Willow",
@@ -332,7 +432,10 @@
           "providers": [
             "Two Wheel Track Days",
             "TrackDaz"
-          ]
+          ],
+          "url": "https://willowspringsraceway.com/",
+          "length": "1.3-2.5 mi",
+          "mapUrl": "https://www.racingcircuits.info/north-america/usa/willow-springs.html"
         },
         {
           "name": "Chuckwalla Valley Raceway",
@@ -342,7 +445,10 @@
           "providers": [
             "Two Wheel Track Days",
             "TrackDaz"
-          ]
+          ],
+          "url": "https://chuckwalla.com/",
+          "length": "2.68 mi",
+          "mapUrl": "https://en.wikipedia.org/wiki/Chuckwalla_Valley_Raceway"
         }
       ]
     },
@@ -369,7 +475,10 @@
           "lon": -123.1329,
           "providers": [
             "2Fast"
-          ]
+          ],
+          "url": "https://www.ridgemotorsportspark.com/",
+          "length": "2.47 mi",
+          "mapUrl": "https://www.racingcircuits.info/north-america/usa/ridge-motorsports-park.html"
         },
         {
           "name": "Pacific Raceways",
@@ -378,7 +487,10 @@
           "lon": -122.1121,
           "providers": [
             "2Fast"
-          ]
+          ],
+          "url": "https://pacificraceways.com/",
+          "length": "2.25 mi",
+          "mapUrl": "https://pacificraceways.com/road-course-track-map/"
         },
         {
           "name": "Portland International Raceway",
@@ -387,7 +499,10 @@
           "lon": -122.6928,
           "providers": [
             "2Fast"
-          ]
+          ],
+          "url": "https://www.portland.gov/parks/portland-international-raceway",
+          "length": "1.92-1.97 mi",
+          "mapUrl": "https://en.wikipedia.org/wiki/Portland_International_Raceway"
         },
         {
           "name": "Oregon Raceway Park",
@@ -396,7 +511,10 @@
           "lon": -120.7833,
           "providers": [
             "2Fast"
-          ]
+          ],
+          "url": "https://oregonraceway.com/",
+          "length": "2.3 mi",
+          "mapUrl": "https://en.wikipedia.org/wiki/Oregon_Raceway_Park"
         }
       ]
     },
@@ -422,8 +540,68 @@
           "lon": -112.3538,
           "providers": [
             "APEXtrackdays"
-          ]
+          ],
+          "url": "https://www.utahmotorsportscampus.com/",
+          "length": "2.0-4.5 mi (East/West/Outer/Full)",
+          "mapUrl": "https://www.racingcircuits.info/north-america/usa/utah-motorsports-campus.html"
         }
+      ]
+    }
+  ],
+  "providerUrls": {
+    "N2 Track Days": "https://www.n2td.org/",
+    "Tony's Track Days": "https://www.tonystrackdays.com/",
+    "Penguin Roadracing School": "https://www.penguinracing.com/",
+    "Sportbike Track Time": "https://www.sportbiketracktime.com/",
+    "Just Track It": "https://justtrackit.net/",
+    "JZilla": "https://www.jzillatrackdays.com/",
+    "Yamaha ChampStreet": "https://ridelikeachampion.com/",
+    "Motovid": "https://www.motovid.com/",
+    "RideSmart": "https://ridesmart.info/",
+    "Motorcycle Missions": "https://motorcyclemissions.org/pages/ride-track",
+    "Fun Track Dayz": "https://www.funtrackdayz.com/",
+    "Two Wheel Track Days": "https://www.2wheelstrackdays.com/",
+    "TrackDaz": "https://trackdaz.com/",
+    "2Fast": "https://www.2-fast.org/",
+    "APEXtrackdays": "https://www.apextrackdays.com/",
+    "Fast Line Track Days": "https://www.fastlinetrackdays.com/",
+    "EvolveGT": "https://evolvegt.com/"
+  },
+  "considerations": [
+    {
+      "title": "📝 Documenting & recording each trackday",
+      "items": [
+        "Decide on a capture setup: helmet/bike-mounted camera per session, plus a quick post-session note (lines, braking points, what to work on next time).",
+        "Pick one place all of it lives — footage, lap times if timed, photos, notes — per track, so it builds into a real record across repeat visits."
+      ]
+    },
+    {
+      "title": "🎮 Prep — using iRacing to learn circuits",
+      "items": [
+        "Checked (Sept 2026): 13 of 32 tracks are in iRacing — New Jersey Motorsports Park, Watkins Glen, Summit Point, New Hampshire Motor Speedway (oval layout only, not a Loudon road-course config), Road Atlanta, Barber, VIR, COTA, Mid-Ohio, Road America, Laguna Seca, Sonoma, and Portland International Raceway.",
+        "The other 19 — including every SoCal/Texas trackday-circuit staple (Willow Springs, Buttonwillow, Thunderhill, Chuckwalla, Eagles Canyon, MSR Houston, Hallett, GingerMan, Grattan, Blackhawk Farms, Roebling Road, Atlanta Motorsports Park, NCM, The Ridge, Pacific Raceways, Oregon Raceway Park, Utah Motorsports Campus) aren't modeled — sim prep only covers the Northeast Loop and part of the Southeast/Midwest clusters.",
+        "Turn this into a standing habit for the tracks that ARE covered: sim laps in the weeks before a trip. For the rest, lean on onboard video from past trackday groups or track walks instead."
+      ]
+    },
+    {
+      "title": "📅 Overall timeframe",
+      "items": [
+        "No hard deadline exists yet, but \"someday\" isn't a plan — worth picking a rough horizon (e.g. all small clusters done by a target year, big clusters post-retirement by another).",
+        "Retirement timeline directly gates when SoCal and the Mountain West add-on become realistic — revisit this once that date firms up."
+      ]
+    },
+    {
+      "title": "🏁 Assume ~2 trackday sessions per track",
+      "items": [
+        "Cluster length estimates were rough totals, not built session-by-session — re-derive each cluster's day count assuming 2 days on-track per venue, not 1, before treating the ranges as reliable.",
+        "This likely pushes every \"small cluster\" toward the upper end of its current day range, and may bump one or two toward the 2-week ceiling."
+      ]
+    },
+    {
+      "title": "🗓️ Fitting real provider calendars",
+      "items": [
+        "Every provider runs fixed event dates, not on-demand access — a cluster trip only works if 2+ tracks in the same region have provider dates close enough together to chain.",
+        "This is the actual next research step before booking anything: pull real event calendars per cluster and see which tracks line up, rather than assuming they will."
       ]
     }
   ]

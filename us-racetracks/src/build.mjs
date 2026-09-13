@@ -1,8 +1,139 @@
 import { writeFileSync } from 'fs';
 
+// Official websites, where confidently found — see chat history for verification notes.
+// Missing entries (generic providers like "regional NE clubs") render as plain text.
+const TRACK_URLS = {
+  'New Jersey Motorsports Park': 'https://njmp.com/',
+  'Watkins Glen International': 'https://www.theglen.com/',
+  'Summit Point': 'https://summitpointmp.com/',
+  'Palmer Motorsports Park': 'https://www.palmermotorsportspark.com/',
+  'New Hampshire Motor Speedway (Loudon)': 'https://www.nhms.com/',
+  'Road Atlanta (Michelin Raceway)': 'https://www.roadatlanta.com/',
+  'Barber Motorsports Park': 'https://barberracingevents.com/',
+  'Atlanta Motorsports Park': 'https://www.atlantamotorsportspark.com/',
+  'Roebling Road Raceway': 'http://www.roeblingroad.com/',
+  'Virginia International Raceway': 'https://virnow.com/',
+  'Circuit of the Americas (COTA)': 'https://circuitoftheamericas.com/',
+  'MotorSport Ranch (Cresson)': 'https://motorsportranch.com/',
+  'Eagles Canyon Raceway': 'https://eaglescanyon.com/',
+  'MSR Houston': 'https://msrhouston.com/',
+  'Hallett Motor Racing Circuit': 'https://www.motorsportreg.com/orgs/hallett',
+  'Mid-Ohio Sports Car Course': 'https://www.midohio.com/',
+  'GingerMan Raceway': 'https://www.gingermanraceway.com/',
+  'Grattan Raceway': 'https://www.grattanraceway.com/',
+  'Blackhawk Farms Raceway': 'https://www.facebook.com/blackhawkfarms/',
+  'Road America': 'https://www.roadamerica.com/',
+  'WeatherTech Raceway Laguna Seca': 'https://weathertechraceway.com/',
+  'Sonoma Raceway': 'https://www.sonomaraceway.com/',
+  'Thunderhill Raceway': 'https://www.thunderhill.com/',
+  'Buttonwillow Raceway Park': 'https://buttonwillowraceway.com/',
+  'Willow Springs / Streets of Willow': 'https://willowspringsraceway.com/',
+  'Chuckwalla Valley Raceway': 'https://chuckwalla.com/',
+  'The Ridge Motorsports Park': 'https://www.ridgemotorsportspark.com/',
+  'Pacific Raceways': 'https://pacificraceways.com/',
+  'Portland International Raceway': 'https://www.portland.gov/parks/portland-international-raceway',
+  'Oregon Raceway Park': 'https://oregonraceway.com/',
+  'Utah Motorsports Campus': 'https://www.utahmotorsportscampus.com/',
+  'NCM Motorsports Park': 'https://www.motorsportspark.org/',
+  'NC Bike (NCCAR)': 'https://nccar.us/ncbike/',
+};
+
+// Length = configuration(s) actually used for trackdays; a range means multiple distinct configs exist.
+const TRACK_LENGTHS = {
+  'New Jersey Motorsports Park': '1.9-2.25 mi (Lightning/Thunderbolt)',
+  'Watkins Glen International': '2.45 mi',
+  'Summit Point': '2.0-2.2 mi (Main/Shenandoah)',
+  'Palmer Motorsports Park': '2.3 mi',
+  'New Hampshire Motor Speedway (Loudon)': '~1.6 mi (road course)',
+  'Road Atlanta (Michelin Raceway)': '1.76-2.54 mi',
+  'Barber Motorsports Park': '2.3-2.38 mi',
+  'Atlanta Motorsports Park': '2.0 mi',
+  'Roebling Road Raceway': '2.02 mi',
+  'Virginia International Raceway': '1.1-4.2 mi (Patriot to Grand Course)',
+  'NCM Motorsports Park': '1.0-3.15 mi (East/West/Full)',
+  'Circuit of the Americas (COTA)': '3.426 mi',
+  'MotorSport Ranch (Cresson)': '1.3-3.1 mi',
+  'Eagles Canyon Raceway': '1.2-2.75 mi',
+  'MSR Houston': '2.38 mi',
+  'Hallett Motor Racing Circuit': '1.8 mi',
+  'Mid-Ohio Sports Car Course': '2.258-2.4 mi',
+  'GingerMan Raceway': '1.88-2.14 mi',
+  'Grattan Raceway': '2.0 mi',
+  'Blackhawk Farms Raceway': '1.95 mi',
+  'Road America': '4.048 mi',
+  'WeatherTech Raceway Laguna Seca': '2.238 mi',
+  'Sonoma Raceway': '1.99 mi',
+  'Thunderhill Raceway': '2.0-4.6 mi (West/East/combined)',
+  'Buttonwillow Raceway Park': '1.06-3.1 mi (many configs)',
+  'Willow Springs / Streets of Willow': '1.3-2.5 mi',
+  'Chuckwalla Valley Raceway': '2.68 mi',
+  'The Ridge Motorsports Park': '2.47 mi',
+  'Pacific Raceways': '2.25 mi',
+  'Portland International Raceway': '1.92-1.97 mi',
+  'Oregon Raceway Park': '2.3 mi',
+  'Utah Motorsports Campus': '2.0-4.5 mi (East/West/Outer/Full)',
+  'NC Bike (NCCAR)': '2.0 mi (bi-directional CW/CCW)',
+};
+
+const TRACK_MAP_URLS = {
+  'New Jersey Motorsports Park': 'https://www.racingcircuits.info/north-america/usa/new-jersey-motorsports-park.html',
+  'Watkins Glen International': 'https://en.wikipedia.org/wiki/Watkins_Glen_International',
+  'Summit Point': 'https://www.racingcircuits.info/north-america/usa/summit-point.html',
+  'Palmer Motorsports Park': 'https://www.racingcircuits.info/north-america/usa/palmer-motorsports-park.html',
+  'New Hampshire Motor Speedway (Loudon)': 'https://en.wikipedia.org/wiki/New_Hampshire_Motor_Speedway',
+  'Road Atlanta (Michelin Raceway)': 'https://www.racingcircuits.info/north-america/usa/road-atlanta.html',
+  'Barber Motorsports Park': 'https://www.racingcircuits.info/north-america/usa/barber-motorsports-park.html',
+  'Atlanta Motorsports Park': 'https://en.wikipedia.org/wiki/Atlanta_Motorsports_Park',
+  'Roebling Road Raceway': 'https://www.racingcircuits.info/north-america/usa/roebling-road.html',
+  'Virginia International Raceway': 'https://www.racingcircuits.info/north-america/usa/virginia-international-raceway.html',
+  'NCM Motorsports Park': 'https://www.racingcircuits.info/north-america/usa/ncm-motorsports-park.html',
+  'Circuit of the Americas (COTA)': 'https://en.wikipedia.org/wiki/Circuit_of_the_Americas',
+  'MotorSport Ranch (Cresson)': 'https://en.wikipedia.org/wiki/MotorSport_Ranch',
+  'Eagles Canyon Raceway': 'https://en.wikipedia.org/wiki/Eagles_Canyon_Raceway',
+  'MSR Houston': 'https://en.wikipedia.org/wiki/MSR_Houston',
+  'Hallett Motor Racing Circuit': 'https://www.racingcircuits.info/north-america/usa/hallett.html',
+  'Mid-Ohio Sports Car Course': 'https://en.wikipedia.org/wiki/Mid-Ohio_Sports_Car_Course',
+  'GingerMan Raceway': 'https://www.racingcircuits.info/north-america/usa/gingerman-raceway.html',
+  'Grattan Raceway': 'https://www.racingcircuits.info/north-america/usa/grattan-raceway.html',
+  'Blackhawk Farms Raceway': 'https://www.racingcircuits.info/north-america/usa/blackhawk-farms.html',
+  'Road America': 'https://en.wikipedia.org/wiki/Road_America',
+  'WeatherTech Raceway Laguna Seca': 'https://en.wikipedia.org/wiki/Laguna_Seca',
+  'Sonoma Raceway': 'https://en.wikipedia.org/wiki/Sonoma_Raceway',
+  'Thunderhill Raceway': 'https://www.racingcircuits.info/north-america/usa/thunderhill-raceway-park.html',
+  'Buttonwillow Raceway Park': 'https://en.wikipedia.org/wiki/Buttonwillow_Raceway_Park',
+  'Willow Springs / Streets of Willow': 'https://www.racingcircuits.info/north-america/usa/willow-springs.html',
+  'Chuckwalla Valley Raceway': 'https://en.wikipedia.org/wiki/Chuckwalla_Valley_Raceway',
+  'The Ridge Motorsports Park': 'https://www.racingcircuits.info/north-america/usa/ridge-motorsports-park.html',
+  'Pacific Raceways': 'https://pacificraceways.com/road-course-track-map/',
+  'Portland International Raceway': 'https://en.wikipedia.org/wiki/Portland_International_Raceway',
+  'Oregon Raceway Park': 'https://en.wikipedia.org/wiki/Oregon_Raceway_Park',
+  'Utah Motorsports Campus': 'https://www.racingcircuits.info/north-america/usa/utah-motorsports-campus.html',
+  'NC Bike (NCCAR)': 'https://lapmeta.com/en/track/variation/214/track_map',
+};
+
+const PROVIDER_URLS = {
+  'N2 Track Days': 'https://www.n2td.org/',
+  "Tony's Track Days": 'https://www.tonystrackdays.com/',
+  'Penguin Roadracing School': 'https://www.penguinracing.com/',
+  'Sportbike Track Time': 'https://www.sportbiketracktime.com/',
+  'Just Track It': 'https://justtrackit.net/',
+  'JZilla': 'https://www.jzillatrackdays.com/',
+  'Yamaha ChampStreet': 'https://ridelikeachampion.com/',
+  'Motovid': 'https://www.motovid.com/',
+  'RideSmart': 'https://ridesmart.info/',
+  'Motorcycle Missions': 'https://motorcyclemissions.org/pages/ride-track',
+  'Fun Track Dayz': 'https://www.funtrackdayz.com/',
+  'Two Wheel Track Days': 'https://www.2wheelstrackdays.com/',
+  'TrackDaz': 'https://trackdaz.com/',
+  '2Fast': 'https://www.2-fast.org/',
+  'APEXtrackdays': 'https://www.apextrackdays.com/',
+  'Fast Line Track Days': 'https://www.fastlinetrackdays.com/',
+  'EvolveGT': 'https://evolvegt.com/',
+};
+
 // Cluster/track data — rough clustering phase, see ../docs/track-research-findings.md.
 // Coordinates are approximate (track-level, not gate-precise) — good enough for a bucket-list map.
-const clusters = [
+const rawClusters = [
   {
     id: 'northeast',
     name: 'Northeast Loop',
@@ -23,9 +154,9 @@ const clusters = [
     id: 'southeast',
     name: 'Southeast Swing',
     size: 'small',
-    length: '10-14 days',
+    length: '12-17 days',
     color: '#a13d2e',
-    states: ['Georgia', 'Alabama', 'Virginia'],
+    states: ['Georgia', 'Alabama', 'Virginia', 'Kentucky', 'North Carolina'],
     offDays: ['Blue Ridge Parkway / Tail of the Dragon riding', 'Asheville, NC food & brewery scene', 'Savannah historic district (near Roebling Road)'],
     tracks: [
       { name: 'Road Atlanta (Michelin Raceway)', state: 'GA', lat: 34.1467, lon: -83.8158, providers: ['N2 Track Days', 'Just Track It', 'JZilla', 'Yamaha ChampStreet'] },
@@ -33,6 +164,8 @@ const clusters = [
       { name: 'Atlanta Motorsports Park', state: 'GA', lat: 34.4207, lon: -84.0546, providers: ['Just Track It', 'JZilla'] },
       { name: 'Roebling Road Raceway', state: 'GA', lat: 32.1465, lon: -81.3387, providers: ['Just Track It'] },
       { name: 'Virginia International Raceway', state: 'VA', lat: 36.5595, lon: -79.2059, providers: ['JZilla', 'regional NE/SE orgs'] },
+      { name: 'NCM Motorsports Park', state: 'KY', lat: 36.9450, lon: -86.3980, providers: ['Fast Line Track Days', 'Sportbike Track Time'] },
+      { name: 'NC Bike (NCCAR)', state: 'NC', lat: 36.4523, lon: -77.5942, providers: ['N2 Track Days', 'EvolveGT'] },
     ],
   },
   {
@@ -113,5 +246,55 @@ const clusters = [
   },
 ];
 
-writeFileSync('../data/track-data.json', JSON.stringify({ clusters }, null, 2));
+const clusters = rawClusters.map(c => ({
+  ...c,
+  tracks: c.tracks.map(t => ({
+    ...t,
+    url: TRACK_URLS[t.name] || null,
+    length: TRACK_LENGTHS[t.name] || null,
+    mapUrl: TRACK_MAP_URLS[t.name] || null,
+  })),
+}));
+
+// Open planning questions Russ wants tracked here — grows over time, don't replace, add to it.
+const considerations = [
+  {
+    title: '📝 Documenting & recording each trackday',
+    items: [
+      'Decide on a capture setup: helmet/bike-mounted camera per session, plus a quick post-session note (lines, braking points, what to work on next time).',
+      'Pick one place all of it lives — footage, lap times if timed, photos, notes — per track, so it builds into a real record across repeat visits.',
+    ],
+  },
+  {
+    title: '🎮 Prep — using iRacing to learn circuits',
+    items: [
+      'Checked (Sept 2026): 13 of 32 tracks are in iRacing — New Jersey Motorsports Park, Watkins Glen, Summit Point, New Hampshire Motor Speedway (oval layout only, not a Loudon road-course config), Road Atlanta, Barber, VIR, COTA, Mid-Ohio, Road America, Laguna Seca, Sonoma, and Portland International Raceway.',
+      'The other 19 — including every SoCal/Texas trackday-circuit staple (Willow Springs, Buttonwillow, Thunderhill, Chuckwalla, Eagles Canyon, MSR Houston, Hallett, GingerMan, Grattan, Blackhawk Farms, Roebling Road, Atlanta Motorsports Park, NCM, The Ridge, Pacific Raceways, Oregon Raceway Park, Utah Motorsports Campus) aren\'t modeled — sim prep only covers the Northeast Loop and part of the Southeast/Midwest clusters.',
+      'Turn this into a standing habit for the tracks that ARE covered: sim laps in the weeks before a trip. For the rest, lean on onboard video from past trackday groups or track walks instead.',
+    ],
+  },
+  {
+    title: '📅 Overall timeframe',
+    items: [
+      'No hard deadline exists yet, but "someday" isn\'t a plan — worth picking a rough horizon (e.g. all small clusters done by a target year, big clusters post-retirement by another).',
+      'Retirement timeline directly gates when SoCal and the Mountain West add-on become realistic — revisit this once that date firms up.',
+    ],
+  },
+  {
+    title: '🏁 Assume ~2 trackday sessions per track',
+    items: [
+      'Cluster length estimates were rough totals, not built session-by-session — re-derive each cluster\'s day count assuming 2 days on-track per venue, not 1, before treating the ranges as reliable.',
+      'This likely pushes every "small cluster" toward the upper end of its current day range, and may bump one or two toward the 2-week ceiling.',
+    ],
+  },
+  {
+    title: '🗓️ Fitting real provider calendars',
+    items: [
+      'Every provider runs fixed event dates, not on-demand access — a cluster trip only works if 2+ tracks in the same region have provider dates close enough together to chain.',
+      'This is the actual next research step before booking anything: pull real event calendars per cluster and see which tracks line up, rather than assuming they will.',
+    ],
+  },
+];
+
+writeFileSync('../data/track-data.json', JSON.stringify({ clusters, providerUrls: PROVIDER_URLS, considerations }, null, 2));
 console.log('Clusters:', clusters.length, 'Tracks:', clusters.reduce((s, c) => s + c.tracks.length, 0));

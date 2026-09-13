@@ -3,7 +3,7 @@ import { readFileSync, writeFileSync } from 'fs';
 const states = JSON.parse(readFileSync('../map/states.json', 'utf8'));
 const bordersPath = JSON.parse(readFileSync('../map/borders.json', 'utf8'));
 const trackPoints = JSON.parse(readFileSync('../map/tracks.json', 'utf8'));
-const { clusters } = JSON.parse(readFileSync('../data/track-data.json', 'utf8'));
+const { clusters, providerUrls, considerations } = JSON.parse(readFileSync('../data/track-data.json', 'utf8'));
 
 function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
 
@@ -41,13 +41,19 @@ const overviewLegend = clusters.map(c => `
     <span>${esc(c.name)}</span>
   </div>`).join('');
 
+function link(name, url) {
+  return url ? `<a href="${esc(url)}" class="ext-link" target="_blank" rel="noopener">${esc(name)}</a>` : esc(name);
+}
+
 // ---- Per-cluster panels, each with its own highlighted map ----
 function trackRows(tracks) {
   return tracks.map(t => `
     <tr>
       <td class="state-cell">${esc(t.state)}</td>
-      <td>${esc(t.name)}</td>
-      <td class="note-cell">${esc(t.providers.join(', '))}</td>
+      <td>${link(t.name, t.url)}</td>
+      <td class="note-cell">${t.length ? esc(t.length) : '—'}</td>
+      <td class="note-cell">${t.providers.map(p => link(p, providerUrls[p])).join(', ')}</td>
+      <td class="note-cell">${t.mapUrl ? `<a href="${esc(t.mapUrl)}" class="ext-link" target="_blank" rel="noopener">map</a>` : '—'}</td>
     </tr>`).join('');
 }
 
@@ -79,13 +85,24 @@ const clusterPanels = clusters.map(c => `
     </div>
     <div class="stop-table-wrap">
     <table class="stop-table">
-      <thead><tr><th>State</th><th>Track</th><th>Trackday provider(s)</th></tr></thead>
+      <thead><tr><th>State</th><th>Track</th><th>Length</th><th>Trackday provider(s)</th><th>Map</th></tr></thead>
       <tbody>${trackRows(c.tracks)}</tbody>
     </table>
     </div>
     <div class="hl-grid">
       ${offDaysList(c.offDays)}
     </div>
+  </div>
+</details>`).join('\n');
+
+const considerationsSvg = considerations.map(c => `
+<details class="phase-panel consideration-panel">
+  <summary>
+    <span class="phase-title">${esc(c.title)}</span>
+    <span class="chevron" aria-hidden="true">▸</span>
+  </summary>
+  <div class="phase-body">
+    <ul class="hl-list consideration-list">${c.items.map(it => `<li>${esc(it)}</li>`).join('')}</ul>
   </div>
 </details>`).join('\n');
 
@@ -172,6 +189,15 @@ svg.usmap, svg.cluster-map { width: 100%; height: auto; display: block; }
 .hl-title { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; color: var(--phase-color, var(--accent)); margin-bottom: 6px; }
 .hl-list { margin: 0; padding-left: 18px; font-size: 13px; line-height: 1.6; }
 
+.ext-link { color: var(--accent); text-decoration: none; font-weight: 600; }
+.ext-link:hover { text-decoration: underline; }
+
+.considerations-header { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin: 32px 0 10px; padding-bottom: 8px; border-bottom: 2px solid var(--text); }
+.considerations-sub { font-size: 12.5px; color: var(--text-muted); }
+.consideration-panel .phase-title { flex: 1 1 auto; }
+.consideration-list { margin: 10px 0 4px; }
+.consideration-list li { margin-bottom: 6px; }
+
 .footer-note { margin-top: 22px; font-size: 12.5px; color: var(--text-muted); text-align: center; }
 
 @media (max-width: 640px) {
@@ -214,6 +240,12 @@ svg.usmap, svg.cluster-map { width: 100%; height: auto; display: block; }
   </div>
 
   ${clusterPanels}
+
+  <div class="considerations-header">
+    <div class="phase-title" style="font-size:18px;font-weight:800;">📋 Things to Consider</div>
+    <div class="considerations-sub">Open planning questions — grows as we work through them</div>
+  </div>
+  ${considerationsSvg}
 
   <div class="footer-note">
     Rough clustering draft — no lodging, no dates, no bookings yet. Track coordinates are approximate. Refine anytime.
