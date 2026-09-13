@@ -1,0 +1,430 @@
+{
+  "clusters": [
+    {
+      "id": "northeast",
+      "name": "Northeast Loop",
+      "size": "small",
+      "length": "9-13 days",
+      "color": "#2f6690",
+      "states": [
+        "New Jersey",
+        "New York",
+        "West Virginia",
+        "Massachusetts",
+        "New Hampshire"
+      ],
+      "offDays": [
+        "Finger Lakes wine country (near Watkins Glen)",
+        "Green & White Mountains scenic riding",
+        "Adirondacks"
+      ],
+      "tracks": [
+        {
+          "name": "New Jersey Motorsports Park",
+          "state": "NJ",
+          "lat": 39.3798,
+          "lon": -75.1112,
+          "providers": [
+            "The Riders Club"
+          ]
+        },
+        {
+          "name": "Watkins Glen International",
+          "state": "NY",
+          "lat": 42.34,
+          "lon": -76.9271,
+          "providers": [
+            "Regional HPDE/moto orgs"
+          ]
+        },
+        {
+          "name": "Summit Point",
+          "state": "WV",
+          "lat": 39.2725,
+          "lon": -77.9814,
+          "providers": [
+            "N2 Track Days"
+          ]
+        },
+        {
+          "name": "Palmer Motorsports Park",
+          "state": "MA",
+          "lat": 42.1887,
+          "lon": -72.3287,
+          "providers": [
+            "NEQ",
+            "regional NE clubs"
+          ]
+        },
+        {
+          "name": "New Hampshire Motor Speedway (Loudon)",
+          "state": "NH",
+          "lat": 43.3636,
+          "lon": -71.4645,
+          "providers": [
+            "Tony's Track Days"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "southeast",
+      "name": "Southeast Swing",
+      "size": "small",
+      "length": "10-14 days",
+      "color": "#a13d2e",
+      "states": [
+        "Georgia",
+        "Alabama",
+        "Virginia"
+      ],
+      "offDays": [
+        "Blue Ridge Parkway / Tail of the Dragon riding",
+        "Asheville, NC food & brewery scene",
+        "Savannah historic district (near Roebling Road)"
+      ],
+      "tracks": [
+        {
+          "name": "Road Atlanta (Michelin Raceway)",
+          "state": "GA",
+          "lat": 34.1467,
+          "lon": -83.8158,
+          "providers": [
+            "N2 Track Days",
+            "Just Track It",
+            "JZilla",
+            "Yamaha ChampStreet"
+          ]
+        },
+        {
+          "name": "Barber Motorsports Park",
+          "state": "AL",
+          "lat": 33.5762,
+          "lon": -86.6206,
+          "providers": [
+            "Just Track It",
+            "JZilla"
+          ]
+        },
+        {
+          "name": "Atlanta Motorsports Park",
+          "state": "GA",
+          "lat": 34.4207,
+          "lon": -84.0546,
+          "providers": [
+            "Just Track It",
+            "JZilla"
+          ]
+        },
+        {
+          "name": "Roebling Road Raceway",
+          "state": "GA",
+          "lat": 32.1465,
+          "lon": -81.3387,
+          "providers": [
+            "Just Track It"
+          ]
+        },
+        {
+          "name": "Virginia International Raceway",
+          "state": "VA",
+          "lat": 36.5595,
+          "lon": -79.2059,
+          "providers": [
+            "JZilla",
+            "regional NE/SE orgs"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "texas",
+      "name": "Texas Triangle",
+      "size": "small",
+      "length": "10-14 days",
+      "color": "#c07d1e",
+      "states": [
+        "Texas",
+        "Oklahoma"
+      ],
+      "offDays": [
+        "Austin live music & food scene",
+        "Texas Hill Country scenic roads",
+        "Fredericksburg"
+      ],
+      "tracks": [
+        {
+          "name": "Circuit of the Americas (COTA)",
+          "state": "TX",
+          "lat": 30.1328,
+          "lon": -97.6411,
+          "providers": [
+            "RideSmart",
+            "Motorcycle Missions"
+          ]
+        },
+        {
+          "name": "MotorSport Ranch (Cresson)",
+          "state": "TX",
+          "lat": 32.547,
+          "lon": -97.6194,
+          "providers": [
+            "RideSmart",
+            "Motorcycle Missions"
+          ]
+        },
+        {
+          "name": "Eagles Canyon Raceway",
+          "state": "TX",
+          "lat": 33.2334,
+          "lon": -97.6572,
+          "providers": [
+            "RideSmart",
+            "Motorcycle Missions"
+          ]
+        },
+        {
+          "name": "MSR Houston",
+          "state": "TX",
+          "lat": 29.2183,
+          "lon": -95.4739,
+          "providers": [
+            "RideSmart",
+            "Motorcycle Missions"
+          ]
+        },
+        {
+          "name": "Hallett Motor Racing Circuit",
+          "state": "OK",
+          "lat": 36.5237,
+          "lon": -96.1256,
+          "providers": [
+            "Regional TX/OK orgs"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "midwest",
+      "name": "Midwest Circuit",
+      "size": "small",
+      "length": "10-14 days",
+      "color": "#3f7d4a",
+      "states": [
+        "Ohio",
+        "Michigan",
+        "Illinois",
+        "Wisconsin"
+      ],
+      "offDays": [
+        "Lake Michigan shoreline towns",
+        "Door County, WI",
+        "Amish country, Ohio"
+      ],
+      "tracks": [
+        {
+          "name": "Mid-Ohio Sports Car Course",
+          "state": "OH",
+          "lat": 40.6892,
+          "lon": -82.6382,
+          "providers": [
+            "Penguin Roadracing School",
+            "Sportbike Track Time"
+          ]
+        },
+        {
+          "name": "GingerMan Raceway",
+          "state": "MI",
+          "lat": 42.2822,
+          "lon": -86.1755,
+          "providers": [
+            "Sportbike Track Time"
+          ]
+        },
+        {
+          "name": "Grattan Raceway",
+          "state": "MI",
+          "lat": 43.0989,
+          "lon": -85.2439,
+          "providers": [
+            "Sportbike Track Time"
+          ]
+        },
+        {
+          "name": "Blackhawk Farms Raceway",
+          "state": "IL",
+          "lat": 42.4906,
+          "lon": -89.0384,
+          "providers": [
+            "Sportbike Track Time",
+            "Motovid"
+          ]
+        },
+        {
+          "name": "Road America",
+          "state": "WI",
+          "lat": 43.7975,
+          "lon": -87.9989,
+          "providers": [
+            "Sportbike Track Time"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "socal",
+      "name": "SoCal Cluster",
+      "size": "big",
+      "length": "14-21 days",
+      "color": "#7a3e91",
+      "states": [
+        "California"
+      ],
+      "offDays": [
+        "Highway 1 / Big Sur",
+        "Joshua Tree",
+        "Napa & Sonoma wine country",
+        "Sierra foothills"
+      ],
+      "tracks": [
+        {
+          "name": "WeatherTech Raceway Laguna Seca",
+          "state": "CA",
+          "lat": 36.5844,
+          "lon": -121.7539,
+          "providers": [
+            "Fun Track Dayz"
+          ]
+        },
+        {
+          "name": "Sonoma Raceway",
+          "state": "CA",
+          "lat": 38.1613,
+          "lon": -122.4544,
+          "providers": [
+            "Fun Track Dayz"
+          ]
+        },
+        {
+          "name": "Thunderhill Raceway",
+          "state": "CA",
+          "lat": 39.5385,
+          "lon": -122.3239,
+          "providers": [
+            "Fun Track Dayz",
+            "Two Wheel Track Days"
+          ]
+        },
+        {
+          "name": "Buttonwillow Raceway Park",
+          "state": "CA",
+          "lat": 35.488,
+          "lon": -119.4568,
+          "providers": [
+            "Fun Track Dayz"
+          ]
+        },
+        {
+          "name": "Willow Springs / Streets of Willow",
+          "state": "CA",
+          "lat": 34.8697,
+          "lon": -118.2531,
+          "providers": [
+            "Two Wheel Track Days",
+            "TrackDaz"
+          ]
+        },
+        {
+          "name": "Chuckwalla Valley Raceway",
+          "state": "CA",
+          "lat": 33.7075,
+          "lon": -115.3494,
+          "providers": [
+            "Two Wheel Track Days",
+            "TrackDaz"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pnw",
+      "name": "Pacific NW Loop",
+      "size": "small",
+      "length": "7-10 days",
+      "color": "#1f7a72",
+      "states": [
+        "Washington",
+        "Oregon"
+      ],
+      "offDays": [
+        "Columbia River Gorge",
+        "Mt. Rainier / Mt. Hood scenic riding",
+        "Oregon coast"
+      ],
+      "tracks": [
+        {
+          "name": "The Ridge Motorsports Park",
+          "state": "WA",
+          "lat": 47.2273,
+          "lon": -123.1329,
+          "providers": [
+            "2Fast"
+          ]
+        },
+        {
+          "name": "Pacific Raceways",
+          "state": "WA",
+          "lat": 47.3459,
+          "lon": -122.1121,
+          "providers": [
+            "2Fast"
+          ]
+        },
+        {
+          "name": "Portland International Raceway",
+          "state": "OR",
+          "lat": 45.5945,
+          "lon": -122.6928,
+          "providers": [
+            "2Fast"
+          ]
+        },
+        {
+          "name": "Oregon Raceway Park",
+          "state": "OR",
+          "lat": 45.3667,
+          "lon": -120.7833,
+          "providers": [
+            "2Fast"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mountainwest",
+      "name": "Mountain West Add-on",
+      "size": "big",
+      "length": "pairs with SoCal or PNW leg",
+      "color": "#8a6d1f",
+      "states": [
+        "Utah"
+      ],
+      "offDays": [
+        "Salt Lake / Wasatch riding",
+        "Bonneville Salt Flats",
+        "Zion / Bryce if extending south"
+      ],
+      "tracks": [
+        {
+          "name": "Utah Motorsports Campus",
+          "state": "UT",
+          "lat": 40.5209,
+          "lon": -112.3538,
+          "providers": [
+            "APEXtrackdays"
+          ]
+        }
+      ]
+    }
+  ]
+}

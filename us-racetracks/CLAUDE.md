@@ -14,6 +14,8 @@ Between trackdays in a region there will be down days. Claude's job on those is 
 
 Status: **rough clustering phase only.** No lodging, no specific dates, no bookings. Russ explicitly does not want deep planning yet — he wants to see a rough proposal (tracks by region, provider references, rough clusters with rough trip-length estimates) and will refine from there.
 
+`itinerary.html` now renders this: an overview US map (all tracks, dot-colored by cluster) plus one accordion panel per cluster, each with its own mini-map highlighting that cluster's states and pinning just its tracks, a track/provider table, and off-day ideas.
+
 ---
 
 ## How his preferences shape the work
@@ -31,13 +33,30 @@ Status: **rough clustering phase only.** No lodging, no specific dates, no booki
 ```
 us-racetracks/
 ├── CLAUDE.md                       # this file
-├── itinerary.html                  # placeholder — empty until clustering is refined
+├── itinerary.html                  # GENERATED — do not hand-edit
+├── data/track-data.json            # GENERATED — do not hand-edit
+├── map/*.json                      # GENERATED — baked map + track projections
+├── src/
+│   ├── build.mjs                   # cluster/track definitions (edit this)
+│   ├── generate.mjs                # projects state paths + track lat/lon -> map/*.json
+│   ├── render.mjs                  # assembles itinerary.html
+│   └── package.json                # us-atlas, topojson-client, d3-geo
 └── docs/
     ├── trip-planning-context.md    # the original brief, verbatim intent
-    └── track-research-findings.md # tracks by region, providers, proposed clusters
+    └── track-research-findings.md  # tracks by region, providers, proposed clusters
 ```
 
-Same convention as `coast-to-coast/` (see root `README.md`) — expect this to eventually grow a `data/` + `src/` build pipeline once the clustering is settled and it's time to render a real `itinerary.html`. Don't build that pipeline early; Russ said no deep planning yet.
+**Edit `src/build.mjs`.** Everything in `data/`, `map/`, and `itinerary.html` is output. Rebuild with:
+
+```bash
+cd us-racetracks/src
+npm install
+node build.mjs && node generate.mjs && node render.mjs
+```
+
+Same pipeline shape as `coast-to-coast/` but simpler — clusters replace phases, tracks replace route stops. The map SVG defines state paths and the border mesh once (`<defs>`) and reuses them via `<use>` in every cluster's mini-map; inlining full state paths per cluster balloons the page ~8x, learned the hard way while building this.
+
+Track lat/lon coordinates in `build.mjs` are approximate (track-level, not gate-precise) — fine for a bucket-list map, not for turn-by-turn navigation.
 
 ## Decisions already made — don't relitigate
 
